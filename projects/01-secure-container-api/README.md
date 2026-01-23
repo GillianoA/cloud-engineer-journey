@@ -21,9 +21,11 @@ Client -> Entra ID Auth -> Azure Container Apps (DAB API) -> Database Views -> D
 ## Key Technical Decisions
 Decision 1 - Azure COntainer Apps vs AKS
 - Chosen for reduced ops overhead + scaling features without full Kubernetes management
+
 Decision 2 - Database Viwes
 - Used views to keep API logic clean, reusable, and consistent
 - Reduced application-side query complexity
+
 Decision 3 - Entra authentication
 - Protected endpoints to enforce secure access
 - Avoided exposing data anonymously
@@ -55,3 +57,4 @@ Decision 3 - Entra authentication
 - Add IaC (Bicep/Terraform)
 - Add CI/CD deployment
 - Add monitoring + alerts
+
