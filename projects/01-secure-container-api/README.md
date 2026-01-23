@@ -19,10 +19,10 @@ A business application needed a secure API layer to expose database-backed data 
 Client -> Entra ID Auth -> Azure Container Apps (DAB API) -> Database Views -> Database
 
 ## Key Technical Decisions
-Decision 1 - Azure COntainer Apps vs AKS
+Decision 1 - Azure Container Apps vs AKS
 - Chosen for reduced ops overhead + scaling features without full Kubernetes management
 
-Decision 2 - Database Viwes
+Decision 2 - Database Views
 - Used views to keep API logic clean, reusable, and consistent
 - Reduced application-side query complexity
 
@@ -34,7 +34,7 @@ Decision 3 - Entra authentication
 - Auth misconfiguration / unauthorized errors
   - Resolved by validating token audience/issuer + ensuring API required auth per endpoint config
 - Database permission/access issues
-  - Resolved by aligning DB role permissions and validating connection string / firewall rules (generic)
+  - Resolved by aligning DB role permissions and validating connection string/firewall rules (generic)
 - Endpoint mapping not returning expected data
   - Resolved by adjusting DAB entity mappings and validating view output
  
@@ -49,12 +49,10 @@ Decision 3 - Entra authentication
 - Improved security posture by enforcing authentication on endpoints
 
 ## Proof
-- Screenshot(s): `/assets/images`
-- Diagram(s): `/assets/diagrams`
+- Diagram(s): `/assets/DAD-infrastructure-diagram.drawio`
 
 ## Next upgrades
 - Add Key Vault
 - Add IaC (Bicep/Terraform)
 - Add CI/CD deployment
 - Add monitoring + alerts
-
